@@ -1,0 +1,43 @@
+<%- include("partials/header"); %>
+
+<div class="row news-app-container">
+  <%- include("partials/categories"); %>
+
+  <div class="col-lg-10 section-spacing">
+    <h3 id="section-title"><%- topic %></h3>
+    <div class="news-content-container">
+      <% const newsCards = categoryNews %>
+
+      <!-- prettier-ignore -->
+      <% newsCards.forEach((card, index) => { %>
+      <div class="category-news-section">
+        <div class="category-news-info">
+          <div class="category-news-text">
+            <h5><a href="<%- card.url %>"> <%- card.name %> </a></h5>
+            <p class="description-text"><%- card.description %>...</p>
+          </div>
+          <div class="category-img-container"></div>
+        </div>
+
+        <div class="category-news-provider">
+          <div class="provider-container">
+            <!-- prettier-ignore -->
+            <% if (topic === "Health" || topic === "Products" || topic === "Science and Technology" || 
+            topic === "Africa" || topic === "Asia" || topic === "MiddleEast") { %>
+            <p class="provider-name"><%- card.provider[0].name %></p>
+            <% } else { %> <img class="news-provider-image" src="<%-
+            card.provider[0].image.thumbnail.contentUrl + "&p=0" %> " />
+            <p class="provider-name"><%- card.provider[0].name %></p>
+            <% } %>
+          </div>
+          <p class="date">Published <%- card.date %></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<script src="/js/script.js"></script>
+
+<%- include("partials/footer"); %>
