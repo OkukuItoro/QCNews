@@ -66,7 +66,6 @@ nav {
   padding: 1rem 2rem 2rem 2rem;
 }
 .news-app-container {
-  margin: auto;
   h2,
   h3,
   h4 {
@@ -126,13 +125,15 @@ nav {
   padding: 1.5rem;
   margin: 2rem 0.5rem;
   border-radius: 10px;
-  .category-news-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
+  .category-news-text {
     .description-text {
       margin-block: 0.7rem;
+      a {
+        text-decoration: underline;
+      }
+      a:hover {
+        color: rgb(19, 41, 134);
+      }
     }
   }
 
@@ -144,13 +145,12 @@ nav {
     .provider-container {
       display: flex;
       align-items: center;
-    }
-
-    .news-provider-image {
-      width: 2.3rem;
-    }
-    p {
-      padding-left: 1rem;
+      .news-provider-image {
+        width: 2.3rem;
+      }
+      p {
+        padding-left: 1rem;
+      }
     }
   }
 }
@@ -197,26 +197,18 @@ footer {
   .category-news-section {
     padding: inherit;
   }
-  .news-content-container {
-    padding: 1rem;
-  }
 }
 @media (max-width: 720px) {
-  .row {
-    padding: 2rem;
-  }
   .news-content-container {
     padding: 0.6rem;
   }
 
-  .category-news-info {
-    .category-news-text {
-      h5 {
-        font-size: 1.1rem;
-      }
-      p {
-        font-size: 0.8rem;
-      }
+  .category-news-text {
+    h5 {
+      font-size: 1.1rem;
+    }
+    .description-text {
+      font-size: 0.8rem;
     }
   }
   .category-news-provider {
@@ -231,14 +223,39 @@ footer {
 }
 
 @media (max-width: 583px) {
-  .category-news-info {
-    .category-news-text {
-      h5 {
-        font-size: 0.9rem;
-      }
-      p {
-        font-size: 0.7rem;
-      }
+  .news-app-container {
+    padding: 1.2rem;
+  }
+  .category-news-text {
+    h5 {
+      font-size: 0.9rem;
+    }
+    .description-text {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@media (max-width: 553px) {
+  .category-news-text {
+    h5 {
+      font-size: 0.9rem;
+    }
+    .description-text {
+      display: none;
+    }
+  }
+
+  .category-news-section {
+    margin: 2rem auto;
+  }
+  .category-news-provider {
+    .provider-name,
+    .date {
+      font-size: 0.6rem;
+    }
+    .news-provider-image {
+      width: 1rem;
     }
   }
 }

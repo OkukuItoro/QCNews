@@ -70,7 +70,6 @@ nav a:hover {
 }
 
 .news-app-container {
-  margin: auto;
   padding: 1.5rem;
 }
 
@@ -145,19 +144,16 @@ nav a:hover {
   border-radius: 10px;
 }
 
-.category-news-section .category-news-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+.category-news-section .category-news-text .description-text {
+  margin-block: 0.7rem;
 }
 
-.category-news-section .category-news-info .description-text {
-  margin-block: 0.7rem;
+.category-news-section .category-news-text .description-text a {
+  text-decoration: underline;
+}
+
+.category-news-section .category-news-text .description-text a:hover {
+  color: #132986;
 }
 
 .category-news-section .category-news-provider {
@@ -181,11 +177,11 @@ nav a:hover {
           align-items: center;
 }
 
-.category-news-section .category-news-provider .news-provider-image {
+.category-news-section .category-news-provider .provider-container .news-provider-image {
   width: 2.3rem;
 }
 
-.category-news-section .category-news-provider p {
+.category-news-section .category-news-provider .provider-container p {
   padding-left: 1rem;
 }
 
@@ -229,22 +225,16 @@ footer h5 {
   .category-news-section {
     padding: inherit;
   }
-  .news-content-container {
-    padding: 1rem;
-  }
 }
 
 @media (max-width: 720px) {
-  .row {
-    padding: 2rem;
-  }
   .news-content-container {
     padding: 0.6rem;
   }
-  .category-news-info .category-news-text h5 {
+  .category-news-text h5 {
     font-size: 1.1rem;
   }
-  .category-news-info .category-news-text p {
+  .category-news-text .description-text {
     font-size: 0.8rem;
   }
   .category-news-provider .provider-name,
@@ -257,11 +247,33 @@ footer h5 {
 }
 
 @media (max-width: 583px) {
-  .category-news-info .category-news-text h5 {
+  .news-app-container {
+    padding: 1.2rem;
+  }
+  .category-news-text h5 {
     font-size: 0.9rem;
   }
-  .category-news-info .category-news-text p {
+  .category-news-text .description-text {
     font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 553px) {
+  .category-news-text h5 {
+    font-size: 0.9rem;
+  }
+  .category-news-text .description-text {
+    display: none;
+  }
+  .category-news-section {
+    margin: 2rem auto;
+  }
+  .category-news-provider .provider-name,
+  .category-news-provider .date {
+    font-size: 0.6rem;
+  }
+  .category-news-provider .news-provider-image {
+    width: 1rem;
   }
 }
 
