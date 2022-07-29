@@ -1,25 +1,28 @@
 <%- include("partials/header"); %>
 
-<div class="row news-app-container">
+<div class="app-container">
   <%- include("partials/categories"); %>
 
-  <div class="col-lg-10 section-spacing">
-    <h3 id="section-title">Top stories</h3>
-    <div class="row news-content-container">
+  <div class="news-content">
+    <h2 class="news-content__title">Top stories</h2>
+    <div class="row">
       <% const newsCards = articles.value %>
 
       <!-- prettier-ignore -->
       <% newsCards.forEach((card, index) => { %>
-      <div class="col-lg-4 headline-news-section">
-        <img src="<%- card.image.url + "&w=500&p=0" %>" />
+      <div class="col-lg-4 news-content__card">
+        <img class="news-content__card--image" src="<%- card.image.url +
+        "&w=500&p=0" %>" />
 
-        <div class="headline-text">
-          <h4>
-            <a href="<%- card.webSearchUrl %>"> <%- card.name %></a>
-          </h4>
-          <div class="headeline-image-src">
+        <div class="news-content__card--text">
+          <h3 class="news-content__card--text-heading">
+            <a class="news-content__card--link" href="<%- card.webSearchUrl %>">
+              <%- card.name %></a
+            >
+          </h3>
+          <p class="news-content__card--provider">
             <%- card.image.provider[0].name %>
-          </div>
+          </p>
         </div>
       </div>
       <% }) %>

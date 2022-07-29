@@ -1,0 +1,52 @@
+:root {
+  --color-bg: #141414;
+}
+
+/* MEDIA BPs*/
+$bp-largest: 125em; //2000px
+$bp-larger: 86.5em; //1384px
+$bp-large: 71.875em; //1150px
+$bp-medium: 61.9375em; //991px
+$bp-small: 35.25em; //564px
+$bp-smallest: 32.4375em; //519px
+
+// category specific bp
+$bp-category-large: 106.25em; //1700px
+$bp-category-smallest: 28.125em; //450px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(238, 238, 238);
+  // font-family: "Gentium Plus", serif;
+  font-family: "Rubik", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.active {
+  background-color: black;
+  color: #fff;
+}
